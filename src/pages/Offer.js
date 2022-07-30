@@ -12,11 +12,12 @@ const Offer = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        console.log("https://lereacteur-vinted-api.herokuapp.com/offers/" + id);
         const response = await axios.get(
-          "https://lereacteur-vinted-api.herokuapp.com/offers/" + id
+          "https://lereacteur-vinted-api.herokuapp.com/offer/" + id
         );
         console.log(response.data);
-        setData(response.data[0]);
+        setData(response.data);
         setIsLoading(false);
       } catch (error) {
         console.log(error);
@@ -29,7 +30,15 @@ const Offer = () => {
     <p>Loading...</p>
   ) : (
     <div>
-      <h1>{data.offers.product_price} €</h1>
+      {<h1>{data.product_price} €</h1>}
+      {<p>{data.product_name}</p>}
+      {<p>{data.product_description}</p>}
+      {<img src={data.product_image.secure_url} />}
+
+      {/* je fais un map de product_details pour afficher Marque, etat, couleur et emplacement*/}
+      {details.map((inDetail, index) => {
+        return <div key={index} inDetail={product_details.marque} />;
+      })}
     </div>
   );
 };

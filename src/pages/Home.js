@@ -24,7 +24,7 @@ const Home = () => {
     <div>
       {data.offers.map((offer, index) => {
         return (
-          <Link to={`/offer/${offer.id}`} key={offer.id}>
+          <Link to={`/offer/${offer._id}`} key={offer._id}>
             <p>{offer.product_name}</p>
             <img src={offer.product_image.secure_url} alt="" />
           </Link>
