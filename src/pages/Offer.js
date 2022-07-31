@@ -35,9 +35,13 @@ const Offer = () => {
       {<p>{data.product_description}</p>}
       {<img src={data.product_image.secure_url} />}
 
-      {/* je fais un map de product_details pour afficher Marque, etat, couleur et emplacement*/}
-      {details.map((inDetail, index) => {
-        return <div key={index} inDetail={product_details.marque} />;
+      {data.product_details.map((inDetail) => {
+        const keys = Object.keys(inDetail);
+        return (
+          <p>
+            {keys[0]} : {inDetail[keys[0]]}
+          </p>
+        );
       })}
     </div>
   );

@@ -9,11 +9,6 @@ function App() {
   return (
     <Router>
       <Routes>
-        <header>
-          <button>s'inscrire</button>
-          <button>se connecter</button>
-          <button>vends tes articles</button>
-        </header>
         <Route path="/" element={<Home />} />
         <Route path="/offer/:id" element={<Offer />} />
       </Routes>

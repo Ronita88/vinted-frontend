@@ -22,6 +22,11 @@ const Home = () => {
     <p>Loading...</p>
   ) : (
     <div>
+      <header>
+        <button>s'inscrire</button>
+        <button>se connecter</button>
+        <button>vends tes articles</button>
+      </header>
       {data.offers.map((offer, index) => {
         return (
           <Link to={`/offer/${offer._id}`} key={offer._id}>
