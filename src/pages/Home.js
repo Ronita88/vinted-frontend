@@ -8,12 +8,16 @@ const Home = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(
-        "https://lereacteur-vinted-api.herokuapp.com/offers"
-      );
-      console.log(response.data);
-      setData(response.data);
-      setIsLoading(false);
+      try {
+        const response = await axios.get(
+          "https://lereacteur-vinted-api.herokuapp.com/offers"
+        );
+        console.log(response.data);
+        setData(response.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
     };
     fetchData();
   }, []);
@@ -22,11 +26,6 @@ const Home = () => {
     <p>Loading...</p>
   ) : (
     <div>
-      <header>
-        <button>s'inscrire</button>
-        <button>se connecter</button>
-        <button>vends tes articles</button>
-      </header>
       {data.offers.map((offer, index) => {
         return (
           <Link to={`/offer/${offer._id}`} key={offer._id}>

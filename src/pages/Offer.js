@@ -24,7 +24,7 @@ const Offer = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [id]);
 
   return isLoading ? (
     <p>Loading...</p>
@@ -35,10 +35,10 @@ const Offer = () => {
       {<p>{data.product_description}</p>}
       {<img src={data.product_image.secure_url} />}
 
-      {data.product_details.map((inDetail) => {
+      {data.product_details.map((inDetail, index) => {
         const keys = Object.keys(inDetail);
         return (
-          <p>
+          <p key={index}>
             {keys[0]} : {inDetail[keys[0]]}
           </p>
         );
