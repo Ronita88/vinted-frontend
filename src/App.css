@@ -12,7 +12,7 @@ img {
   object-fit: contains;
 } */
 
-.signup {
+.signup-form {
   width: 50vw;
   display: flex;
   flex-direction: column;

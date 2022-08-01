@@ -1,11 +1,14 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Signup = ({ handleToken }) => {
-  const [email, setEmail] = useState();
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [newsletter, setNewsletter] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -16,17 +19,18 @@ const Signup = ({ handleToken }) => {
           email: email,
           username: username,
           password: password,
-          newsletter: newsLetter,
+          newsletter: newsletter,
         }
       );
       handleToken(response.data.token);
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <form className="signup" onSubmit={handleSubmit}>
+    <form className="signup-form" onSubmit={handleSubmit}>
       <h1>S'inscrire</h1>
       <input
         type="text"

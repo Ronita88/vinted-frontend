@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
+import logo from "../assets/img/Vinted_logo.png";
 
-const Header = () => {
+const Header = ({ handleToken }) => {
   return (
     <div className="logo">
-      <img src="./assets/img/trip.png" alt="logo" />
+      <Link to="/">
+        <img src={logo} alt="logo" />
+      </Link>
+
       <Link to="/signup">
         <button>s'inscrire</button>
       </Link>
@@ -13,10 +17,14 @@ const Header = () => {
       </Link>
 
       <Link to>
-        <button>déconnexion</button>
+        <button
+          onClick={() => {
+            handleToken();
+          }}
+        >
+          déconnexion
+        </button>
       </Link>
-
-      <button>vends tes articles</button>
     </div>
   );
 };
