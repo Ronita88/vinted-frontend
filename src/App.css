@@ -11,3 +11,18 @@ img {
   width: 150px;
   object-fit: contains;
 } */
+
+.signup {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.signup input {
+  width: 50%;
+}

@@ -1,18 +1,18 @@
-import { Link } from "React-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <div className="logo">
       <img src="./assets/img/trip.png" alt="logo" />
-      <Link>
+      <Link to="/signup">
         <button>s'inscrire</button>
       </Link>
 
-      <Link>
+      <Link to="/login">
         <button>se connecter</button>
       </Link>
 
-      <Link>
+      <Link to>
         <button>déconnexion</button>
       </Link>
 

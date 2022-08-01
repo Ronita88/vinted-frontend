@@ -33,7 +33,7 @@ const Offer = () => {
       {<h1>{data.product_price} €</h1>}
       {<p>{data.product_name}</p>}
       {<p>{data.product_description}</p>}
-      {<img src={data.product_image.secure_url} />}
+      {<img src={data.product_image.secure_url} alt="" />}
 
       {data.product_details.map((inDetail, index) => {
         const keys = Object.keys(inDetail);
